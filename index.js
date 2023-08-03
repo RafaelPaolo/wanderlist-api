@@ -11,7 +11,7 @@ import todosRouter from './routers/todos.js';
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.set('port', PORT);
-await connect('mongodb://127.0.0.1:27017/Wanderlist', { useNewUrlParser: true, useUnifiedTopology: true })
+await connect('mongodb+srv://wanderlister:test123>@cluster0.yz1ofnf.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {
   console.log('Connected to MongoDB');
 })
