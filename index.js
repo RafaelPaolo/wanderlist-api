@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 app.set('port', PORT);
 // Correct the MongoDB connection string here
-const mongoDBURI = 'mongodb+srv://wanderlister:test123@cluster0.yz1ofnf.mongodb.net/yourDatabaseName?retryWrites=true&w=majority';
+const mongoDBURI = 'mongodb+srv://wanderlister:test123@cluster0.yz1ofnf.mongodb.net/?retryWrites=true&w=majority';
 
 await connect(mongoDBURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
