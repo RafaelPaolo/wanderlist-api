@@ -23,7 +23,13 @@ await connect(mongoDBURI, { useNewUrlParser: true, useUnifiedTopology: true })
 });
 
 app.use(bodyParser.json());
-app.use(cors());
+const corsOptions = {
+  origin: 'https://wanderlist-itinerary.onrender.com',
+  methods: 'GET, POST, PUT, DELETE',
+  allowedHeaders: 'Content-Type, Authorization',
+};
+
+app.use(cors(corsOptions));
 
 app.use(userRouter);
 app.use(placeRouter)
