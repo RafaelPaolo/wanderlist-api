@@ -9,6 +9,7 @@ import placeRouter from './routers/placeRouter.js'
 import todosRouter from './routers/todos.js';
 // Load environment variables from .env file
 import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 10000;
