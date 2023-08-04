@@ -7,13 +7,14 @@ import { connect } from 'mongoose';
 import userRouter from './routers/UserRouter.js'
 import placeRouter from './routers/placeRouter.js'
 import todosRouter from './routers/todos.js';
+// Load environment variables from .env file
+import dotenv from 'dotenv';
 
 const app = express();
 const PORT = process.env.PORT || 10000;
-app.set('port', PORT);
-// Correct the MongoDB connection string here
-const mongoDBURI = 'mongodb+srv://wanderlister:test123@cluster0.yz1ofnf.mongodb.net/?retryWrites=true&w=majority';
 
+
+const mongoDBURI = process.env.MONGODB_URI;
 await connect(mongoDBURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
   console.log('Connected to MongoDB');
